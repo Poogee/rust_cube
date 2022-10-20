@@ -5,8 +5,8 @@ use termion::{color, clear};
 use ndarray::{arr2, Array};
 
 #[allow(non_upper_case_globals)]
-
 const n:usize = 10;
+
 fn shesh(frame_n: i64) -> usize{
     if frame_n <= 160{ return 0 }
     let a = frame_n as usize % (8*n) ;
@@ -16,6 +16,7 @@ fn shesh(frame_n: i64) -> usize{
     a
 
 }
+
 fn cube_coords(frame_n: i64) -> Vec<Vec<f64>> {
     let mut cube_coords = Vec::new();
     for x in 0..10*n{
@@ -71,76 +72,128 @@ fn cube_coords(frame_n: i64) -> Vec<Vec<f64>> {
                         }
                     }
                 }
-                if frame_n >= 400{
-                    if (x+y==10){cube_coords.push(vec![x as f64, y as f64, z as f64, 5f64]) }
+                // // 0 brain cells code starts
+                // if frame_n >= 440 && frame_n <= 480{
+                //     if x+y==10{cube_coords.push(vec![x as f64, y as f64, z as f64, 5f64]) }
 
 
-                }
-                if frame_n >= 460{
-                    if (x as i64-5)*(x as i64-5) + (y as i64-5)*(y as i64-5) + (z as i64-20)*(z as i64-20) <= (26*n*n) as i64{
-                        if (x as i64-5)*(x as i64-5) + (y as i64-5)*(y as i64-5) + (z as i64-20)*(z as i64-20) >= (24*n*n) as i64{
-                        cube_coords.push(vec![x as f64, y as f64, z as f64, 5f64]) 
-                    }
-                }
-                }
+                // }
+                // if frame_n >= 480 && frame_n <= 550{
+                //     if (x as i64-5)*(x as i64-5) + (y as i64-5)*(y as i64-5) + (z as i64-20)*(z as i64-20) <= (26*n*n) as i64{
+                //         if (x as i64-5)*(x as i64-5) + (y as i64-5)*(y as i64-5) + (z as i64-20)*(z as i64-20) >= (24*n*n) as i64{
+                //         cube_coords.push(vec![x as f64, y as f64, z as f64, 5f64]) 
+                //     }
+                // }
+                // }
+                // if frame_n >= 550 && frame_n <= 570{
+                //     if 3*n <= x && x <= 5*n{
+                //         if y == (3*n-1) - shesh(frame_n) {
+                //             if 3*n <= z && z <= 5*n{
+                //                 cube_coords.push(vec![x as f64, y as f64, z as f64, 0f64])
+                //             }
+                //         }
+                //     }
+    
+    
+                //     if (3*n) <= y && y <= (6*n){
+                //         if x == 3*n - shesh(frame_n){
+                //             if 3*n <= z && z <= 6*n{
+                //                 cube_coords.push(vec![x as f64, y as f64, z as f64, 1f64])
+                //             }
+                //         }
+                //     }
+    
+                //     if (3*n) <= y && y <= (6*n) {
+                //         if z == 3*n - shesh(frame_n){
+                //             if 3*n <= x && x <= 6*n{
+                //                 cube_coords.push(vec![x as f64, y as f64, z as f64, 2f64])
+                //             }
+                //         }
+                //     }
+    
+                //     if 3*n <= x && x <= 6*n{
+                //         if y == (6*n) + shesh(frame_n) {
+                //             if 3*n <= z && z <= 6*n{
+                //                 cube_coords.push(vec![x as f64, y as f64, z as f64, 3f64])
+                //             }
+                //         }
+                //     }
+    
+    
+                //     if (3*n) <= y && y <= (6*n) {
+                //         if x == 6*n + shesh(frame_n){
+                //             if 3*n <= z && z <= 6*n{
+                //                 cube_coords.push(vec![x as f64, y as f64, z as f64, 4f64])
+                //             }
+                //         }
+                //     }
+    
+                //     if (3*n) <= y && y <= (6*n) {
+                //         if z == 6*n + shesh(frame_n){
+                //             if 3*n <= x && x <= 6*n{
+                //                 cube_coords.push(vec![x as f64, y as f64, z as f64, 5f64])
+                //             }
+                //         }
+                //     }    
+                // }
+                // if frame_n >= 320 && frame_n <= 440{
+                //     if x <= 3*n{
+                //         if y == (0) {
+                //             if z <= 3*n{
+                //                 cube_coords.push(vec![x as f64, y as f64, z as f64, 0f64])
+                //             }
+                //         }
+                //     }
+    
+    
+                //     if y <= (3*n){
+                //         if x == 0{
+                //             if z <= 3*n{
+                //                 cube_coords.push(vec![x as f64, y as f64, z as f64, 1f64])
+                //             }
+                //         }
+                //     }
+    
+                //     if y <= (3*n) {
+                //         if z == 0 {
+                //             if x <= 3*n{
+                //                 cube_coords.push(vec![x as f64, y as f64, z as f64, 2f64])
+                //             }
+                //         }
+                //     }
+    
+                //     if x <= 3*n{
+                //         if y == (0) {
+                //             if z <= 3*n{
+                //                 cube_coords.push(vec![x as f64, y as f64, z as f64, 3f64])
+                //             }
+                //         }
+                //     }
+    
+    
+                //     if y <= (3*n) {
+                //         if x == 0{
+                //             if z <= 3*n{
+                //                 cube_coords.push(vec![x as f64, y as f64, z as f64, 4f64])
+                //             }
+                //         }
+                //     }
+    
+                //     if y <= (3*n) {
+                //         if z == 0 {
+                //             if x <= 3*n{
+                //                 cube_coords.push(vec![x as f64, y as f64, z as f64, 5f64])
+                //             }
+                //         }
+                //     }
+                //}
+                //     // 0 brain cells code ends
 
-                if frame_n >= 320{
-                    if 0 <= x && x <= 3*n{
-                        if y == (0) {
-                            if 0 <= z && z <= 3*n{
-                                cube_coords.push(vec![x as f64, y as f64, z as f64, 0f64])
-                            }
-                        }
-                    }
-    
-    
-                    if (0) <= y && y <= (3*n){
-                        if x == 0{
-                            if 0 <= z && z <= 3*n{
-                                cube_coords.push(vec![x as f64, y as f64, z as f64, 1f64])
-                            }
-                        }
-                    }
-    
-                    if (0) <= y && y <= (3*n) {
-                        if z == 0 {
-                            if 0 <= x && x <= 3*n{
-                                cube_coords.push(vec![x as f64, y as f64, z as f64, 2f64])
-                            }
-                        }
-                    }
-    
-                    if 0 <= x && x <= 3*n{
-                        if y == (0) {
-                            if 0 <= z && z <= 3*n{
-                                cube_coords.push(vec![x as f64, y as f64, z as f64, 3f64])
-                            }
-                        }
-                    }
-    
-    
-                    if (0) <= y && y <= (3*n) {
-                        if x == 0{
-                            if 0 <= z && z <= 3*n{
-                                cube_coords.push(vec![x as f64, y as f64, z as f64, 4f64])
-                            }
-                        }
-                    }
-    
-                    if (0) <= y && y <= (3*n) {
-                        if z == 0 {
-                            if 0 <= x && x <= 3*n{
-                                cube_coords.push(vec![x as f64, y as f64, z as f64, 5f64])
-                            }
-                        }
-                    }
                     
 
-                    
 
 
-
-                }
+                
             }
         }
     }    
@@ -176,7 +229,7 @@ fn update_R3(frame_n: i64, cube: &Vec<Vec<f64>>) -> Vec<Vec<i64>> {
 
 #[allow(non_snake_case)]
 fn R3_to_R2(mut R3: Vec<Vec<i64>>) -> Vec<Vec<String>>{
-    let mut R2 = vec![vec![" ".to_string() ; n*21] ; n*21];
+    let mut R2 = vec![vec![" ".to_string() ; n*22] ; n*21];
     R3.sort_by_key(|v| (*v)[2]);
     for v in R3{
         if v[0] + 10*n as i64 >= 0 && v[1] + 10*n as i64 >= 0 { 
@@ -212,15 +265,18 @@ fn vec_to_string(R2: Vec<Vec<String>>) -> String{
 
 
 fn main(){
-    let cube: Vec<Vec<f64>> = cube_coords(0);
+    // let cube: Vec<Vec<f64>> = cube_coords(0);
     let mut frame_n = 1;
     loop{
         print!("{}", clear::All);
-        print!("{}\r", vec_to_string(R3_to_R2(update_R3(frame_n, &cube_coords(frame_n)))));
+        // print!("{}\r", vec_to_string(R3_to_R2(update_R3(frame_n, &cube)))); 
+        print!("{}\r", vec_to_string(R3_to_R2(update_R3(frame_n, &cube_coords(frame_n))))); 
         io::stdout().flush().unwrap(); 
-        sleep(Duration::from_millis(5));
+        sleep(Duration::from_millis(10));
         frame_n += 1; 
 
         
     }
 }
+
+// saul
