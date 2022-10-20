@@ -1,3 +1,3 @@
 # rust_cube
 
-be ready for brain dead code
+be ready for blazingly fast brain dead code
