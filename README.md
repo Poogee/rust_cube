@@ -2,7 +2,7 @@
 
 tl;dr be ready for blazingly fast brain dead code
 
-This is an attempt to make an animated 3D cube in terminal using rust. I did not follow any 3D graphics or linalg tutorials at all, that's why it turned out that messy.
+This is an attempt to make an animated 3D cube in terminal using rust. I did not follow any 3D graphics or linalg tutorials, that's why it turned out that messy.
 
 
 
